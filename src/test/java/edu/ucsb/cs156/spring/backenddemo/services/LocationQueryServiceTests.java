@@ -24,9 +24,8 @@ public class LocationQueryServiceTests {
     @Test
     public void test_getJSON() {
 
-        String location = "Isla Vista";
-	String locationURLEncoded = "Isla%20Vista";
-        String expectedURL = LocationQueryService.ENDPOINT.replace("{location}", locationURLEncoded);
+        String location = "Springfield";
+        String expectedURL = LocationQueryService.ENDPOINT.replace("{location}", location);
         String fakeJsonResult = "{ \"fake\" : \"result\" }";
 
         this.mockRestServiceServer.expect(requestTo(expectedURL))
