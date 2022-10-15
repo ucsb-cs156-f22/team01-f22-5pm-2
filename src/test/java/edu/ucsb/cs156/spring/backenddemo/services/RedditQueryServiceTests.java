@@ -21,6 +21,10 @@ public class RedditQueryServiceTests {
 
     @Test
     public void test_getJSON() throws URISyntaxException, UnsupportedEncodingException, JsonProcessingException {
+        
         String expectedURL = redditQueryService.ENDPOINT;
+        String fakeJSONResult = "{ \"fake\" : \"result\" }";
+
+
     }
 }
