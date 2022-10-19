@@ -5,6 +5,7 @@ import org.springframework.web.client.RestTemplate;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.boot.web.client.RestTemplateBuilder;
 
@@ -36,8 +37,9 @@ public class RedditQueryService {
         headers.set("User-Agent","spring-boot:cs156-team01:f22 (by /u/cgaucho)");
 
         HttpEntity<String> entity = new HttpEntity<>(headers);
+        Map<String, String> uriVariables = Map.of("subreddit", subreddit);
 
-        ResponseEntity<String> response = restTemplate.exchange(ENDPOINT, HttpMethod.GET, entity, String.class);
+        ResponseEntity<String> response = restTemplate.exchange(ENDPOINT, HttpMethod.GET, entity, String.class, uriVariables);
         return response.getBody();
     }
    
