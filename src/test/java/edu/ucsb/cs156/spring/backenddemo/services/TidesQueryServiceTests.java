@@ -37,7 +37,7 @@ public class TidesQueryServiceTests {
                 .andExpect(header("Content-Type", MediaType.APPLICATION_JSON.toString()))
                 .andRespond(withSuccess(fakeJsonResult, MediaType.APPLICATION_JSON));
 
-        String actualResult = tidesQueryService.getJSON(distance, minMag);
+        String actualResult = tidesQueryService.getJSON(beginDate, endDate, station);
         assertEquals(fakeJsonResult, actualResult);
     }
 }
