@@ -5,7 +5,7 @@ Lab instructions: <https://ucsb-cs156.github.io/f22/lab/team01/>
 ```
 |   Name    | GitHub Id |  Service                    | Controller                |
 |-----------|-----------|-----------------------------|---------------------------| 
-| Geordie   |           | `LocationQueryService`      | `LocationController`      |   
+| Geordie   | eduglt    | `LocationQueryService`      | `LocationController`      |   
 | Michael   |           | `PublicHolidayQueryService` | `PublicHolidayController` |   
 | Bryan     |           | `RedditQueryService`        | `RedditController`        |   
 | Sophia    |           | `TidesQueryService`         | `TidesController`         |   
