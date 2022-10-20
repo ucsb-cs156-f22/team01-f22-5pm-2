@@ -35,4 +35,5 @@ public class ZipCodeQueryServiceTests {
 
         String actualResult = countryCodeQueryService.getJSON(zipcode);
         assertEquals(fakeJsonResult, actualResult);
+    }
 }
