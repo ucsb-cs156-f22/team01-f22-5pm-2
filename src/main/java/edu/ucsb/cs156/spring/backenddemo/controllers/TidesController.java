@@ -18,7 +18,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 
-@Api(description="Tides from https://api.tidesandcurrents.noaa.gov/api/prod/")
+@Api(description="Tide Information from NOAA https://api.tidesandcurrents.noaa.gov/api/prod/")
 @Slf4j
 @RestController
 @RequestMapping("/api/tides")
@@ -29,7 +29,7 @@ public class TidesController {
     @Autowired
     TidesQueryService tidesQueryService;
 
-    @ApiOperation(value = "Get water level for date range, in local time.")
+    @ApiOperation(value = "For station id, see: https://tidesandcurrents.noaa.gov/tide_predictions.html?gid=1393")
     @GetMapping("/get")
     public ResponseEntity<String> getTides(
         @ApiParam("beginDate in format yyyymmdd") @RequestParam String beginDate,
