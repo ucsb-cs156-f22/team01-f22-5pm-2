@@ -1,7 +1,5 @@
 package edu.ucsb.cs156.spring.backenddemo.controllers;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -10,8 +8,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
 import edu.ucsb.cs156.spring.backenddemo.services.UniversityQueryService;
-import edu.ucsb.cs156.spring.backenddemo.services.PublicHolidayQueryService;
-
 
 import static org.mockito.ArgumentMatchers.eq;
 import static org.junit.jupiter.api.Assertions.assertEquals;
