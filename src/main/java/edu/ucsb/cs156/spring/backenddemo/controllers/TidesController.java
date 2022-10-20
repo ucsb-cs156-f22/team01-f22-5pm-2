@@ -29,7 +29,7 @@ public class TidesController {
     @Autowired
     TidesQueryService tidesQueryService;
 
-    @ApiOperation(value = "For station id, see: https://tidesandcurrents.noaa.gov/tide_predictions.html?gid=1393")
+    @ApiOperation(value = "Get water level for date range, in local time.",notes = "For station id, see: https://tidesandcurrents.noaa.gov/tide_predictions.html?gid=1393" )
     @GetMapping("/get")
     public ResponseEntity<String> getTides(
         @ApiParam("beginDate in format yyyymmdd") @RequestParam String beginDate,
