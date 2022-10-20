@@ -30,7 +30,7 @@ public class UniversityControllerTests {
   public void test_getCollegeSubreddits() throws Exception {
   
     String fakeJsonResult="{ \"fake\" : \"result\" }";
-    String name = "UniversityOfCalifornia,SantaBarbara";
+    String name = "UniversityOfCaliforniaSantaBarbara";
     when(mockUniversityQueryService.getJSON(eq(name))).thenReturn(fakeJsonResult);
 
     String url = String.format("/api/university/get?name=%s", name);
