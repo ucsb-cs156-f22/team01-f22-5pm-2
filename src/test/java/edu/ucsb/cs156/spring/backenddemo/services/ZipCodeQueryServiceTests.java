@@ -1,4 +1,4 @@
-package test.java.edu.ucsb.cs156.spring.backenddemo.services;
+package edu.ucsb.cs156.spring.backenddemo.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.client.RestClientTest;
@@ -12,7 +12,7 @@ import static org.springframework.test.web.client.match.MockRestRequestMatchers.
 import static org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.header;
 
-@RestClientTest(EarthquakeQueryService.class)
+@RestClientTest(ZipCodeQueryService.class)
 public class ZipCodeQueryServiceTests {
     @Autowired
     private MockRestServiceServer mockRestServiceServer;
@@ -24,7 +24,7 @@ public class ZipCodeQueryServiceTests {
     public void test_getJSON() {
 
         String zipcode = "93117";
-        String expectedURL = CountryCodeQueryService.ENDPOINT.replace("{zipcode}", zipcode);
+        String expectedURL = zipCodeQueryService.ENDPOINT.replace("{zipcode}", zipcode);
 
         String fakeJsonResult = "{ \"fake\" : \"result\" }";
 
@@ -33,7 +33,7 @@ public class ZipCodeQueryServiceTests {
                 .andExpect(header("Content-Type", MediaType.APPLICATION_JSON.toString()))
                 .andRespond(withSuccess(fakeJsonResult, MediaType.APPLICATION_JSON));
 
-        String actualResult = countryCodeQueryService.getJSON(zipcode);
+        String actualResult = zipCodeQueryService.getJSON(zipcode);
         assertEquals(fakeJsonResult, actualResult);
     }
 }
